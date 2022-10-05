@@ -47,10 +47,15 @@ function mainComponent() {
     return mainElement;
 }
 
-// function footerComponent() {
-
-// }
+function footerComponent() {
+    const footer = document.createElement('footer');
+    footer.textContent = 'Site design by Brian McCall Lopez';
+    
+    return footer;
+}
 
 document.body.appendChild(headComponent());
-document.body.appendChild(mainComponent()); // Need to apply style loader
+document.body.appendChild(mainComponent()); 
+document.body.appendChild(footerComponent()); 
+
 console.log("So far, so good");

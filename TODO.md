@@ -2,4 +2,8 @@
 * [x] Main container
 * [x] Style
 * [ ] Tab browsing
-* [ ] Footer
+* [x] Footer
+* [ ] Home tab
+* [ ] Menu tab
+* [ ] Reservations tab
+* [ ] interactive tabs

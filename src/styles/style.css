@@ -59,6 +59,7 @@ nav {
     flex-direction: row;
     background-color: black;
     justify-content: center;
+    gap: 3rem;
 }
 
 nav > div {
