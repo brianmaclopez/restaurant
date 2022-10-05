@@ -1,4 +1,5 @@
 import './styles/style.css';
+import Pizza from './images/pizza.jpg'
 
 function headComponent() {
     const header = document.createElement('header');
@@ -8,6 +9,10 @@ function headComponent() {
 
     // Set, populate and append banner
     bannerDiv.setAttribute('id', 'head-text');
+    // Load pizza.jpg onto the banner
+    const pizzaBanner = new Image();
+    pizzaBanner.src = Pizza;
+    bannerDiv.appendChild(pizzaBanner);
     bannerDiv.textContent = 'Turtle Pizza';
     h1.appendChild(bannerDiv);
     h1.setAttribute('id', 'header');
@@ -34,7 +39,7 @@ function cardComponent() {
 function mainComponent() {
     console.log('main called');
     const mainElement = document.createElement('main');
-    mainElement.textContent("<h1>I am Main</h1>");
+    // mainElement.textContent("<h1>I am Main</h1>");
     return mainElement;
 }
 
