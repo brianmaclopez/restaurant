@@ -91,6 +91,6 @@ main {
     font-size: 96px;
     text-align: center;
     text-transform: capitalize;
-    color: white;
+    color: rgb(205, 196, 178);
     text-shadow: 5px 5px 3px black;
   }
