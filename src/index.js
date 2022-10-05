@@ -1,5 +1,6 @@
 import './styles/style.css';
 import Pizza from './images/pizza.jpg'
+import { card1, card2, card3 } from './content/cards.js';
 
 function headComponent() {
     const header = document.createElement('header');
@@ -14,6 +15,7 @@ function headComponent() {
     pizzaBanner.src = Pizza;
     bannerDiv.appendChild(pizzaBanner);
     bannerDiv.textContent = 'Turtle Pizza';
+    bannerDiv.classList.add('cursive');
     h1.appendChild(bannerDiv);
     h1.setAttribute('id', 'header');
     header.appendChild(h1);
@@ -29,17 +31,19 @@ function headComponent() {
     return header;
 }
 
-function cardComponent() {
+function cardComponent(text) {
     const card = document.createElement('article');
     card.setAttribute('class', 'card');
-    card.textContent('hello');
+    card.textContent = text;
     return card;
 }
 
 function mainComponent() {
     console.log('main called');
     const mainElement = document.createElement('main');
-    // mainElement.textContent("<h1>I am Main</h1>");
+    mainElement.appendChild(cardComponent(card1));
+    mainElement.appendChild(cardComponent(card2));
+    mainElement.appendChild(cardComponent(card3));
     return mainElement;
 }
 

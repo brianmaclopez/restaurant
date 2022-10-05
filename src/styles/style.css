@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Herr+Von+Muellerhoff&family=Montserrat:wght@300;400;700&display=swap");
+
 :root {
     padding: 0;
     margin: 0;
@@ -83,3 +85,11 @@ main {
     width: 25%;
 }
 
+.cursive {
+    font-family: "Herr Von Muellerhoff", cursive;
+    font-size: 96px;
+    text-align: center;
+    text-transform: capitalize;
+    color: white;
+    text-shadow: 5px 5px 3px black;
+  }
