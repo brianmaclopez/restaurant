@@ -75,6 +75,11 @@ nav > div {
     background-color: rgb(221, 221, 221); 
 }
 
+nav > div:hover {
+    background-color: rgb(255, 255, 255); 
+    cursor: pointer;    
+}
+
 main {
     margin: 1.5rem;
     display: flex;

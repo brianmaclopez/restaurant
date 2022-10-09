@@ -1,6 +1,7 @@
 import './styles/style.css';
 import Pizza from './images/pizza.jpg'
-import { card1, card2, card3 } from './content/cards.js';
+import { home, menu, reservation } from './content/cards.js';
+
 
 function headComponent() {
     const header = document.createElement('header');
@@ -20,10 +21,41 @@ function headComponent() {
     h1.setAttribute('id', 'header');
     header.appendChild(h1);
 
+    const tabs = ['Home', 'Menu', 'Reservations'];
     // Make, Populate and append divs to nav
     for (let i = 0; i < 3; i++) {
         const div = document.createElement('div');
-        div.textContent = `Tab ${i + 1}`;
+        div.textContent = tabs[i];
+        div.addEventListener('click', () => {
+            // Dynamically add event according to type
+            console.log('click');
+
+            let node = document.getElementById("main");
+
+            switch (tabs[i]) {
+                case 'Home':
+                    if (node.parentNode) {
+                      node.parentNode.removeChild(node);
+                    }
+                    document.getElementById('content').appendChild(mainComponent(home));
+                    break;
+                case 'Menu':
+                    if (node.parentNode) {
+                      node.parentNode.removeChild(node);
+                    }
+                    document.getElementById('content').appendChild(mainComponent(menu));
+                    break;
+                case 'Reservations':
+                    if (node.parentNode) {
+                        node.parentNode.removeChild(node);
+                      }
+                    document.getElementById('content').appendChild(mainComponent(reservation));
+                    document.getElementById('main').setAttribute('background-color', 'white');
+                    break;
+            }
+            // console.dir()
+            // Change main card comp
+        });
         nav.appendChild(div);
     }
     header.appendChild(nav);
@@ -31,19 +63,28 @@ function headComponent() {
     return header;
 }
 
-function cardComponent(text) {
-    const card = document.createElement('article');
-    card.setAttribute('class', 'card');
-    card.textContent = text;
-    return card;
+// Deprecated
+// function cardComponent(text) {
+//     const card = document.createElement('article');
+//     card.setAttribute('class', 'card');
+//     card.textContent = text;
+//     return card;
+// }
+function contentComponent() {
+    const content = document.createElement('div');
+    content.appendChild(mainComponent(home));
+    content.id = 'content';
+
+    return content;
 }
 
-function mainComponent() {
+function mainComponent(card) {
     console.log('main called');
     const mainElement = document.createElement('main');
-    mainElement.appendChild(cardComponent(card1));
-    mainElement.appendChild(cardComponent(card2));
-    mainElement.appendChild(cardComponent(card3));
+    mainElement.id = 'main'
+    mainElement.appendChild(card());
+    // mainElement.appendChild(cardComponent(menu));
+    // mainElement.appendChild(cardComponent(reservation));
     return mainElement;
 }
 
@@ -54,8 +95,12 @@ function footerComponent() {
     return footer;
 }
 
+// const content = document.querySelector('#main');
+// const main = mainComponent(home);
+// console.log(content);
+
 document.body.appendChild(headComponent());
-document.body.appendChild(mainComponent()); 
+document.body.appendChild(contentComponent()); 
 document.body.appendChild(footerComponent()); 
 
 console.log("So far, so good");

@@ -7,7 +7,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "npx webpack --config webpack.config.js",
     "watch": "npx webpack --watch",
-    "start": "webpack serve --open"
+    "start": "webpack serve --open",
+    "clean": "rm dist/*.jpg dist/*.js"
   },
   "author": "Brian McCall Lopez",
   "license": "ISC",

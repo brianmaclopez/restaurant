@@ -1,5 +1,56 @@
-const card1 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus mattis molestie a iaculis at erat. Dictumst vestibulum rhoncus est pellentesque elit ullamcorper dignissim. Id diam maecenas ultricies mi eget mauris pharetra et ultrices. Id diam maecenas ultricies mi eget mauris pharetra.';
-const card2 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Tellus at urna condimentum mattis pellentesque id nibh tortor. Quam lacus suspendisse faucibus interdum.';
-const card3 = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Blandit massa enim nec dui. Faucibus a pellentesque sit amet porttitor. Mauris nunc congue nisi vitae suscipit tellus mauris. Volutpat consequat mauris nunc congue. Tincidunt arcu non sodales neque sodales ut etiam.';
+const homeComp = function() {
+    const section = document.createElement('section');
+    const h1 = document.createElement('h1');
+    const p = document.createElement('p');
 
-export { card1, card2, card3 };
+    section.classList.add('homeSection');
+    h1.classList.add('homeH1');
+    p.classList.add('homeP');
+
+    h1.textContent = 'Home Page';
+    p.textContent = 'This is content all about the homepage';
+
+    section.appendChild(h1);
+    section.appendChild(p);
+    return section;
+}
+
+const menuComp = function() {
+    const section = document.createElement('section');
+    const h1 = document.createElement('h1');
+    const p = document.createElement('p');
+
+    section.classList.add('menuSection');
+    h1.classList.add('menuH1');
+    p.classList.add('menuP');
+
+    h1.textContent = 'Menu Page';
+    p.textContent = 'This is content all about the Menu';
+
+    section.appendChild(h1);
+    section.appendChild(p);
+    return section;
+}
+
+const reservationComp = function() {
+    const section = document.createElement('section');
+    const h1 = document.createElement('h1');
+    const p = document.createElement('p');
+
+    section.classList.add('reservationSection');
+    h1.classList.add('reservationH1');
+    p.classList.add('reservationP');
+
+    h1.textContent = 'Reservations';
+    p.textContent = 'This is content all about the reservations';
+
+    section.appendChild(h1);
+    section.appendChild(p);
+    return section;
+}
+
+export { 
+    homeComp as home,
+    menuComp as menu, 
+    reservationComp as reservation
+};
