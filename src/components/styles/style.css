@@ -65,7 +65,7 @@ nav {
 nav > div {
     height: 100%;
     padding: 0 1em;
-    background-color: white;
+    
     border-top-left-radius: 15px;
     border-top-right-radius: 8px;
     border-left: 2px solid black;
@@ -78,6 +78,18 @@ nav > div {
 nav > div:hover {
     background-color: rgb(255, 255, 255); 
     cursor: pointer;    
+}
+
+.tab1 {
+    background-color: rgb(221, 221, 221);
+}
+
+.tab2 {
+    background-color: rgb(221, 221, 221);
+}
+
+.tab3 {
+    background-color: rgb(221, 221, 221);
 }
 
 main {
