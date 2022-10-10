@@ -3,8 +3,8 @@
 * [x] Style
 * [x] Tab browsing
 * [x] Footer
-* [ ] Home tab
-* [ ] Menu tab
-* [ ] Reservations tab
-* [ ] interactive tabs
-* [ ] tab bg color toggling
+* [ ] Home tab flesh
+* [ ] Menu tab flesh
+* [ ] Reservations tab flesh
+* [x] interactive tabs
+* [x] tab bg color toggling

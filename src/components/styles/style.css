@@ -80,15 +80,7 @@ nav > div:hover {
     cursor: pointer;    
 }
 
-.tab1 {
-    background-color: rgb(221, 221, 221);
-}
-
-.tab2 {
-    background-color: rgb(221, 221, 221);
-}
-
-.tab3 {
+.tab1, .tab2, .tab3 {
     background-color: rgb(221, 221, 221);
 }
 
@@ -110,4 +102,8 @@ main {
     text-transform: capitalize;
     color: rgb(205, 196, 178);
     text-shadow: 5px 5px 3px black;
-  }
+}
+
+.active-tab {
+    background-color: white;
+}

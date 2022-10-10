@@ -1,5 +1,5 @@
 const homeComp = function() {
-    console.log('loading cards component from cards.js...');
+    console.log('loading home component from cards.js...');
     const section = document.createElement('section');
     const h1 = document.createElement('h1');
     const p = document.createElement('p');

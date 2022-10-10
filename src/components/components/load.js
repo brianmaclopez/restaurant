@@ -9,6 +9,7 @@ function headComponent() {
     const nav = document.createElement('nav');
     const bannerDiv = document.createElement('div');
     const h1 = document.createElement('h1');
+    const getTabs = () => document.getElementById('nav-bar').childNodes;
 
     // Set, populate and append banner
     bannerDiv.setAttribute('id', 'head-text');
@@ -31,43 +32,52 @@ function headComponent() {
         const div = document.createElement('div');
         div.textContent = tabs[i];
         div.classList.add(`tab${i + 1}`);
-        // div.addEventListener('click', () => {
-        //     // Dynamically add event according to type
-        //     console.log('click');
+        div.addEventListener('click', () => {
+            // Dynamically add event according to type
+            console.log('click');
+            let node = document.getElementById("main");
+            const content = document.getElementById('content');
 
-        //     let node = document.getElementById("main");
-        //     const content = document.getElementById('content');
-        //     const main = document.getElementById('main');
-
-        //     switch (tabs[i]) {
-        //         case 'Home':
-        //             if (node.parentNode) {
-        //               node.parentNode.removeChild(node);
-        //             }
-        //             // document.body.getElementsByClassName('tab1').style.backgroundColor('white');
-        //             this.style.backgroundColor = this.style.backgroundColor === 'green' ? 'red' : 'green';
-        //             content.appendChild(mainComponent(home));
-        //             break;
-        //         case 'Menu':
-        //             if (node.parentNode) {
-        //               node.parentNode.removeChild(node);
-        //             }
-        //             content.appendChild(mainComponent(menu));
-        //             div.style.backgroundColor = 'white';
-        //             break;
-        //         case 'Reservations':
-        //             if (node.parentNode) {
-        //                 node.parentNode.removeChild(node);
-        //               }
-        //             content.appendChild(mainComponent(reservation));
-        //             div.style.backgroundColor = 'white';
-        //             break;
-        //     }
-        //     // console.dir()
-        //     // Change main card comp
-        // });
+            switch (tabs[i]) {
+                case 'Home':
+                    console.log('home tab called...');
+                    if (node.parentNode) {
+                      node.parentNode.removeChild(node);
+                    }
+                    for (const tab of getTabs()) {
+                        tab.classList.remove('active-tab');
+                    }
+                    div.classList.add('active-tab');
+                    content.appendChild(mainComponent(home));
+                    break;
+                case 'Menu':
+                    console.log('menu tab called...');
+                    if (node.parentNode) {
+                      node.parentNode.removeChild(node);
+                    }
+                    for (const tab of getTabs()) {
+                        tab.classList.remove('active-tab');
+                    }
+                    div.classList.add('active-tab');
+                    content.appendChild(mainComponent(menu));
+                    break;
+                case 'Reservations':
+                    console.log('resrvations tab called...');
+                    if (node.parentNode) {
+                        node.parentNode.removeChild(node);
+                    }
+                    for (const tab of getTabs()) {
+                        tab.classList.remove('active-tab');
+                    }
+                    div.classList.add('active-tab');
+                    content.appendChild(mainComponent(reservation));
+                    break;
+            }
+        });
         nav.appendChild(div);
     }
+    nav.id = 'nav-bar';
+    nav.firstChild.classList.add('active-tab');
     header.appendChild(nav);
 
     return header;
